@@ -1,0 +1,12 @@
+Collection Mapping in Hibernate :
+	We can map collection elements of Persistent class in Hibernate. 
+	You need to declare the type of collection in Persistent class from one of the following types:
+
+	1- java.util.List
+	2- java.util.Set
+	3- java.util.SortedSet
+	4- java.util.Map
+	5-java.util.SortedMap
+	6- java.util.Collection
+	or write the implementation of org.hibernate.usertype.UserCollectionType
+	

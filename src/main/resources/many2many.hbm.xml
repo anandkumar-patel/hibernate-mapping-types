@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC
+     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+       "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="anand.learn.many2many.Question" table="question06">
+		<id name="id">
+			<column name="q_id" />
+			<generator class="increment" />
+		</id>
+		<property name="qname"></property>
+
+		<list name="answers" table="quest_ans06" fetch="select" cascade="all">
+			<key column="q_id"></key>
+			<index column="type"></index>
+			<many-to-many class="anand.learn.many2many.Answer"
+				column="ans_id" />
+		</list>
+
+	</class>
+
+	<class name="anand.learn.many2many.Answer" table="answer06">
+		<id name="id">
+			<column name="ans_id" />
+			<generator class="increment" />
+		</id>
+		<property name="answername"></property>
+		<property name="postedBy"></property>
+	</class>
+</hibernate-mapping> 
